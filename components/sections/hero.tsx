@@ -27,7 +27,9 @@ export function Hero() {
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           >
             Elevate Your Brand With{' '}
-            <span className="gradient-text">Strategic Digital Marketing</span>
+            <span className="gradient-text">
+              Strategic Digital Marketing
+            </span>
           </motion.h1>
 
           {/* Description */}
@@ -37,7 +39,8 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Professional social media marketing solutions for businesses and creators. Drive engagement, grow your audience, and build your brand with our proven strategies.
+            Professional social media marketing solutions for businesses and creators.
+            Drive engagement, grow your audience, and build your brand with our proven strategies.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -47,8 +50,21 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <button className="btn-primary">Get Started</button>
-            <button className="btn-secondary">Learn More</button>
+            {/* Get Started */}
+            <a
+              href="#contact"
+              className="btn-primary"
+            >
+              Get Started
+            </a>
+
+            {/* Learn More */}
+            <a
+              href="#services"
+              className="btn-secondary"
+            >
+              Learn More
+            </a>
           </motion.div>
         </div>
       </div>

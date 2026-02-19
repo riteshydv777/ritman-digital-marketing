@@ -6,23 +6,27 @@ import { CheckCircle2 } from 'lucide-react'
 const steps = [
   {
     id: 1,
-    title: 'Select Marketing Service',
-    description: 'Choose from our comprehensive range of professional digital marketing solutions tailored to your needs.',
+    title: 'Select a Service Package',
+    description:
+      'Browse and choose from our range of digital marketing service packages designed to enhance your online visibility and engagement.',
   },
   {
     id: 2,
-    title: 'Share Campaign Details',
-    description: 'Provide us with your business information, goals, and target audience for a personalized approach.',
+    title: 'Submit Campaign Requirements',
+    description:
+      'Provide the required campaign details such as profile link, quantity, or service preferences through our secure platform.',
   },
   {
     id: 3,
-    title: 'Strategy Execution',
-    description: 'Our expert team implements your customized marketing strategy with professional precision.',
+    title: 'Secure Payment Confirmation',
+    description:
+      'Complete your transaction using our encrypted and secure payment gateway. Your order is confirmed immediately after successful payment.',
   },
   {
     id: 4,
-    title: 'Performance Tracking',
-    description: 'Receive detailed reports and analytics to measure the success of your campaigns.',
+    title: 'Order Processing & Delivery',
+    description:
+      'Once payment is confirmed, the selected service is processed and delivered within the estimated timeframe according to the chosen package.',
   },
 ]
 
@@ -30,6 +34,7 @@ export function HowItWorksNew() {
   return (
     <section className="section-container relative">
       <div className="max-width-container">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,13 +47,14 @@ export function HowItWorksNew() {
             How It <span className="gradient-text">Works</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Our simple four-step process ensures professional execution of your marketing campaigns.
+            Our simple four-step process ensures smooth and secure order placement and service delivery.
           </p>
         </motion.div>
 
         {/* Steps Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {/* Connection Lines - Desktop Only */}
+
+          {/* Connection Line (Desktop Only) */}
           <div className="hidden lg:block absolute top-1/3 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/20 via-blue-500/50 to-blue-500/20 -z-10" />
 
           {steps.map((step, index) => (
@@ -85,6 +91,16 @@ export function HowItWorksNew() {
             </motion.div>
           ))}
         </div>
+
+        {/* Legal Disclaimer */}
+        <div className="mt-14 text-center">
+          <p className="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            Delivery timelines may vary depending on selected service package,
+            platform policies, and campaign requirements. All services are
+            provided for promotional and marketing purposes only.
+          </p>
+        </div>
+
       </div>
     </section>
   )
