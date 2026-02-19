@@ -1,0 +1,119 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  --background: 240 30% 3%;
+  --foreground: 0 0% 98%;
+  --primary: 219 80% 50%;
+  --primary-light: 219 100% 60%;
+  --secondary: 200 90% 56%;
+  --accent: 38 92% 50%;
+  --muted: 240 10% 25%;
+  --muted-foreground: 240 5% 65%;
+  --card: 240 20% 8%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 15% 15%;
+  --ring: 219 80% 50%;
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-secondary: hsl(var(--secondary));
+  --color-accent: hsl(var(--accent));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-ring: hsl(var(--ring));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+  }
+
+  .glass-effect {
+    @apply bg-white/[0.08] backdrop-blur-xl border border-white/[0.12] rounded-2xl;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-blue-500/50;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 rounded-full font-semibold border-2 border-blue-400 text-blue-300 hover:bg-blue-500/10 transition-all duration-300;
+  }
+
+  .section-container {
+    @apply w-full px-4 py-16 md:py-24 lg:py-32;
+  }
+
+  .max-width-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .blur-background {
+    background-image: 
+      radial-gradient(at 20% 50%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 80%, rgba(15, 23, 42, 0.3) 0px, transparent 50%);
+    pointer-events: none;
+  }
+}
